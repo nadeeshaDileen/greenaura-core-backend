@@ -7,6 +7,7 @@ export class GreenauraCoreBackendStack extends cdk.Stack {
     super(scope, id, props);
 
     // The code that defines your stack goes here
+    //This is sample comment
 
     // example resource
     // const queue = new sqs.Queue(this, 'GreenauraCoreBackendQueue', {
