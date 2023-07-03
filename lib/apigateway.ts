@@ -32,9 +32,7 @@ export class GreenauraCoreApiGateway extends Construct {
             exports.handler = async function(event, context) {
               return {
                 statusCode: 200,
-                body: ${JSON.stringify({
-                  message: 'Welcome to, Greenaura backend!',
-                })},
+                body: "Welcome to, Greenaura backend!",
                 headers: {
                   'Access-Control-Allow-Origin': '*',
                   'Access-Control-Allow-Credentials': true,
