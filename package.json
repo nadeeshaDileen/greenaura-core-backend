@@ -8,7 +8,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk deploy --profile greenaura-dev"
+    "cdk": "cdk deploy --profile greenaura-dev",
+    "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\""
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
