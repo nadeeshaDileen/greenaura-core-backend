@@ -21,6 +21,8 @@ export class GreenauraCoreApiGateway extends Construct {
       },
     })
 
+    //this is for testing
+
     //API Resources
     const coreResource = this.api.root.addResource('core-endpoint')
 
