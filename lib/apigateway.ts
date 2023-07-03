@@ -32,7 +32,7 @@ export class GreenauraCoreApiGateway extends Construct {
             exports.handler = async function(event, context) {
               return {
                 statusCode: 200,
-                body: 'Welcome to, Greenaura!'
+                body: 'Welcome to, Greenaura backend!'
               };
             };
           `),
