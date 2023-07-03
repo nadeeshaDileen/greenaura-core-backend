@@ -22,10 +22,10 @@ export class GreenauraCoreApiGateway extends Construct {
     });
 
     //API Resources
-    const coreResource = this.api.root.addResource("coreresource");
+    const coreResource = this.api.root.addResource("core-endpoint");
 
     // Create the Lambda function
-    const myLambdaFunction = new lambda.Function(this, "MyLambdaFunction", {
+    const coreLambdaFunction = new lambda.Function(this, "CoreLambdaFunction", {
       runtime: lambda.Runtime.NODEJS_14_X,
       handler: "index.handler",
       code: lambda.Code.fromInline(`
@@ -38,10 +38,10 @@ export class GreenauraCoreApiGateway extends Construct {
           `),
     });
 
-    // GET /core-resources
+    // GET /core-endpoint
     coreResource.addMethod(
       "GET",
-      new apigw.LambdaIntegration(myLambdaFunction)
+      new apigw.LambdaIntegration(coreLambdaFunction)
     );
   }
 }
