@@ -5,6 +5,7 @@ import { Construct } from 'constructs'
 interface GreenauraCoreApigwProps {
   restApiName: string
   stageName: string
+  coreLambda: any
 }
 
 export class GreenauraCoreApiGateway extends Construct {
@@ -21,33 +22,10 @@ export class GreenauraCoreApiGateway extends Construct {
       },
     })
 
-    //this is for testing
-
     //API Resources
     const coreResource = this.api.root.addResource('core-endpoint')
 
-    // Create the Lambda function
-    const coreLambdaFunction = new lambda.Function(this, 'CoreLambdaFunction', {
-      runtime: lambda.Runtime.NODEJS_14_X,
-      handler: 'index.handler',
-      code: lambda.Code.fromInline(`
-            exports.handler = async function(event, context) {
-              return {
-                statusCode: 200,
-                body: "Welcome to, Greenaura backend!",
-                headers: {
-                  'Access-Control-Allow-Origin': '*',
-                  'Access-Control-Allow-Credentials': true,
-              }
-              };
-            };
-          `),
-    })
-
     // GET /core-endpoint
-    coreResource.addMethod(
-      'GET',
-      new apigw.LambdaIntegration(coreLambdaFunction)
-    )
+    coreResource.addMethod('GET', new apigw.LambdaIntegration(props.coreLambda))
   }
 }
