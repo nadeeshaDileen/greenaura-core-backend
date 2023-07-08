@@ -28,11 +28,13 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0"
+    "@typescript-eslint/parser": "^5.0.0",
+    "@types/aws-lambda": "^8.10.114"
   },
   "dependencies": {
     "aws-cdk-lib": "2.73.0",
     "constructs": "^10.0.0",
-    "source-map-support": "^0.5.21"
+    "source-map-support": "^0.5.21",
+    "aws-lambda": "^1.0.7"
   }
 }
